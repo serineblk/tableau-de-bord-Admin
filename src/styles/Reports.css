@@ -1,304 +1,153 @@
-/* Reports.css */
-.reports {
-  padding: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  font-family: 'Poppins', sans-serif;
-  background-color: #ffffff;
-  border-radius: 24px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+/* Styles globaux */
+.financial-analysis {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  background-color: #f5f4f4; /* Beige clair */
+  color: #333;
+  line-height: 1.6;
 }
 
-.reports h2 {
+h1 {
   text-align: center;
-  color: #6c5ce7;
-  margin-bottom: 40px;
-  font-size: 2.75rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  background: linear-gradient(45deg, #6c5ce7, #a29bfe);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #785a3e; /* Marron foncé */
+  margin-bottom: 20px;
 }
 
-.reports h3 {
-  color: #5a4abf;
-  margin-bottom: 25px;
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: -0.25px;
+h2 {
+  color: #9c7b5d; /* Marron moyen */
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #d4c4b3; /* Marron très clair */
+  padding-bottom: 5px;
 }
 
-.period-filter {
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.period-filter label {
-  margin-right: 15px;
-  font-size: 18px;
-  color: #2d3436;
-  font-weight: 500;
-}
-
-.period-filter select {
-  padding: 12px;
-  border-radius: 14px;
-  border: 2px solid #dfe6e9;
-  font-size: 16px;
-  color: #2d3436;
-  background-color: #f8f9fa;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.period-filter select:focus {
-  border-color: #6c5ce7;
-  box-shadow: 0 0 12px rgba(108, 92, 231, 0.25);
-  outline: none;
-}
-
-.hotel-performance .stats {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 50px;
-  flex-wrap: wrap;
-}
-
-.stat-item {
-  text-align: center;
-  padding: 25px;
-  background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  width: 240px;
-  margin: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: linear-gradient(145deg, #ffffff, #f8f9fa);
-}
-
-.stat-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
-}
-
-.stat-label {
-  font-size: 18px;
-  color: #2d3436;
-  font-weight: 500;
+h3 {
+  color: #a88766; /* Marron chaud */
   margin-bottom: 10px;
 }
 
-.stat-value {
-  font-size: 32px;
-  font-weight: 700;
-  color: #6c5ce7;
-  margin-top: 15px;
-  background: linear-gradient(45deg, #6c5ce7, #a29bfe);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Filtre de période */
+.period-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.service-performance .service-table {
+.period-filter label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.period-filter button {
+  background-color: #fff;
+  border: 1px solid #d4c4b3; /* Marron très clair */
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.period-filter button.active,
+.period-filter button:hover {
+  background-color: #a88766; /* Marron chaud */
+  color: #fff;
+  border-color: #a88766;
+}
+
+/* Section des indicateurs financiers */
+.financial-metrics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
   width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 50px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.service-table th,
-.service-table td {
-  padding: 18px;
-  text-align: left;
-  border-bottom: 2px solid #dfe6e9;
+.metric {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 1px solid #d4c4b3; /* Marron très clair */
 }
 
-.service-table th {
-  background-color: #6c5ce7;
-  color: white;
-  font-weight: 600;
+.metric:hover {
+  transform: translateY(-5px);
+}
+
+.metric span {
+  display: block;
+  font-size: 14px;
+  color: #785a3e; /* Marron foncé */
+}
+
+.metric strong {
   font-size: 18px;
+  color: #9c7b5d; /* Marron moyen */
 }
 
-.service-table tr:hover {
-  background-color: #f8f9fa;
-}
-
+/* Section des graphiques */
 .charts {
-  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
 }
 
 .chart-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  align-items: flex-start;
+  justify-content: center;
 }
 
 .chart {
-  flex: 1;
+  background-color: #fff;
   padding: 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  border: 1px solid #dfe6e9;
-  min-width: 350px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: 1px solid #d4c4b3; /* Marron très clair */
 }
 
 .chart:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
 
-.chart h4 {
-  margin-bottom: 15px;
-  color: #5a4abf;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.25px;
-}
-
-.chart canvas {
-  max-width: 100%;
-  height: 300px;
-}
-
-.loading-indicator {
+/* Section des segments clients */
+.customer-segments ul {
+  list-style: none;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
+  gap: 10px;
 }
 
-.loading-indicator .spinner {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #6c5ce7;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 1.5s linear infinite;
+.customer-segments li {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d4c4b3; /* Marron très clair */
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.customer-segments li strong {
+  color: #a88766; /* Marron chaud */
 }
 
-.analysis {
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 50px;
-  background: linear-gradient(145deg, #ffffff, #f8f9fa);
-}
-
-.analysis p {
-  font-size: 18px;
-  line-height: 1.8;
-  color: #2d3436;
-  margin-bottom: 20px;
-}
-
-.analysis strong {
-  color: #6c5ce7;
-  font-weight: 700;
-  background: linear-gradient(45deg, #6c5ce7, #a29bfe);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .reports {
-    padding: 20px;
-  }
-
-  .reports h2 {
-    font-size: 2rem;
-  }
-
-  .reports h3 {
-    font-size: 1.5rem;
-  }
-
-  .stat-item {
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  .chart-container {
-    gap: 20px;
-  }
-
-  .chart {
-    min-width: 100%;
-  }
-}
-
-/* Styles pour les images */
-.service-table img {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  margin-right: 10px;
-  transition: transform 0.3s ease;
-}
-
-.service-table img:hover {
-  transform: scale(1.1);
-}
-
-.stat-item img {
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
-  margin-bottom: 10px;
-  transition: transform 0.3s ease;
-}
-
-.stat-item img:hover {
-  transform: scale(1.1);
-}
-
-.chart img {
-  width: 30px;
-  height: 30px;
-  border-radius: 6px;
-  margin: 0 5px;
-  transition: transform 0.3s ease;
-}
-
-.chart img:hover {
-  transform: scale(1.1);
-}
-
-.chart-small {
-  flex: 0 0 30%;
-  padding: 15px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  border: 1px solid #dfe6e9;
-}
-
-.chart-large {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.chart-large .chart {
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  border: 1px solid #dfe6e9;
-}
-
-.chart-small canvas {
-  max-width: 100%;
-  height: 200px;
-}
-
-.chart-large .chart canvas {
-  max-width: 100%;
-  height: 300px;
+/* Section des performances marketing */
+.marketing-performance {
+  margin-top: 30px;
+  text-align: center;
 }

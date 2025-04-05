@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-  background-color: #f8f9fa;
+  background-color: #f8f9fa73;
   min-height: 100vh;
   font-family: 'Arial', sans-serif;
 }
@@ -17,7 +17,8 @@
   align-items: center;
   margin-bottom: 30px;
   padding: 20px;
-  background-color: #ffffff;
+  background-color:#c9ac6fec ;
+  
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -30,7 +31,7 @@
 
 .dashboard-header h1 {
   font-size: 28px;
-  color: #333;
+  color: #0c0c0c;
   font-weight: 600;
   margin: 0;
 }
@@ -44,8 +45,8 @@
 
 .profile-button {
   padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
+  background-color: #e7e7e7c7;
+  color: rgb(2, 2, 2);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -55,7 +56,7 @@
 }
 
 .profile-button:hover {
-  background-color: #0056b3;
+  background-color: #ececea;
   transform: translateY(-2px);
 }
 
@@ -148,14 +149,14 @@
   justify-content: space-between;
   gap: 20px;
   padding: 20px;
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  background: linear-gradient(135deg, #f5f7fa, #bcd3c7ce);
   border-radius: 20px;
 }
 
 .stat-card {
   flex: 1;
   padding: 30px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.658);
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -173,18 +174,18 @@
 }
 
 .stat-card:nth-child(1) {
-  background: linear-gradient(135deg, rgba(0, 123, 255, 0.8), rgba(0, 191, 255, 0.8));
-  border: 1px solid rgba(0, 123, 255, 0.5);
+  background: linear-gradient(135deg, rgba(223, 175, 43, 0.836), rgba(172, 137, 41, 0.836));
+  border: 1px solid rgba(7, 7, 7, 0.973);
 }
 
 .stat-card:nth-child(2) {
-  background: linear-gradient(135deg, rgba(40, 167, 69, 0.8), rgba(124, 252, 0, 0.8));
-  border: 1px solid rgba(40, 167, 69, 0.5);
+  background: linear-gradient(135deg, rgba(238, 203, 88, 0.897), rgba(150, 118, 12, 0.678));
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .stat-card:nth-child(3) {
-  background: linear-gradient(135deg, rgba(220, 53, 69, 0.8), rgba(255, 107, 107, 0.8));
-  border: 1px solid rgba(220, 53, 69, 0.5);
+  background: linear-gradient(135deg, rgba(223, 175, 43, 0.836), rgba(172, 137, 41, 0.836) );
+  border: 1px solid rgba(8, 8, 8, 0.986);
 }
 
 .stat-card h2 {
@@ -220,7 +221,7 @@
 }
 
 .stat-card::after {
-  content: '📊';
+  
   position: absolute;
   top: 20px;
   right: 20px;
@@ -499,4 +500,202 @@
 
 .form-actions button[type="button"]:hover {
   background-color: #ccc;
+}
+/* Styles pour la nouvelle répartition du personnel */
+.staff-distribution {
+  margin-top: 25px;
+  background: #F5E7D8;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.staff-distribution h2 {
+  color: #5E3023;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.distribution-container {
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+.distribution-legend {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.legend-icon {
+  margin-right: 5px;
+}
+
+.legend-label {
+  color: #5E3023;
+  font-size: 0.9rem;
+}
+
+.legend-value {
+  color: #5E3023;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Style spécifique pour les barres */
+.recharts-bar-rectangle {
+  rx: 4px;
+  ry: 4px;
+}
+.chart-container-small {
+  margin-bottom: 20px;
+}
+
+.chart-container-small h2 {
+  font-size: 16px; /* Taille de titre ajustée */
+}
+/* Styles pour le formulaire de profil */
+.profile-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.profile-form-container {
+  background-color: #F5E7D8;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-form-container h2 {
+  color: #0f0f0f;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #080808;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #c0b7ac;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #201f1f;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.form-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cancel-button {
+  background-color: #D2B48C;
+  color: #5E3023;
+}
+
+.cancel-button:hover {
+  background-color: #ece9e6;
+}
+
+.save-button {
+  background-color: #582010;
+  color: #F5E7D8;
+}
+
+.save-button:hover {
+  background-color: #3A1E14;
+}
+/* Style global pour la section du profil */
+.profile-section {
+  background-color: #F5E7D8; /* Fond beige clair */
+  border: 1px solid #8B4513; /* Bordure marron */
+  border-radius: 10px; /* Coins arrondis */
+  padding: 20px; /* Espacement interne */
+  margin-bottom: 20px; /* Espacement en bas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Style pour le titre de la section */
+.profile-section h2 {
+  color: #5E3023; /* Marron foncé */
+  font-size: 1.5rem; /* Taille de police */
+  margin-bottom: 15px; /* Espacement sous le titre */
+  text-align: center; /* Centrage du texte */
+}
+
+/* Style pour le conteneur des informations administrateur */
+.admin-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espace entre les paragraphes */
+}
+
+/* Style pour chaque paragraphe d'information */
+.admin-info p {
+  font-size: 1rem; /* Taille de police */
+  color: #3A5A78; /* Bleu foncé pour le texte */
+  margin: 0; /* Supprimer les marges par défaut */
+}
+
+/* Style pour les labels en gras */
+.admin-info p strong {
+  color: #8B4513; /* Marron moyen pour les labels */
+  font-weight: bold;
+}
+
+/* Style pour le bouton "Modifier le Profil" */
+.profile-button {
+  background-color: #5E3023; /* Marron foncé */
+  color: white; /* Texte blanc */
+  border: none; /* Pas de bordure */
+  padding: 10px 20px; /* Espacement interne */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur au survol */
+  font-size: 1rem; /* Taille de police */
+  margin-top: 15px; /* Espacement au-dessus du bouton */
+  transition: background-color 0.3s ease; /* Transition fluide */
+  align-self: flex-start; /* Alignement à gauche */
+}
+
+/* Changement de couleur au survol du bouton */
+.profile-button:hover {
+  background-color: #8B4513; /* Marron plus clair */
 }

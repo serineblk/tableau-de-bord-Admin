@@ -1,28 +1,26 @@
 .compatible-service-container {
   padding: 60px 20px;
   text-align: center;
-  background-image: url('../assets/servicecompatible.webp'); /* المسار إلى الصورة */
-  background-size: cover; /* تغطية الخلفية بالكامل */
-  background-position: center; /* توسيط الصورة */
-  background-repeat: no-repeat; /* منع تكرار الصورة */
-  /* لون خلفية شبه شفاف لتحسين القراءة */
-  background-blend-mode: overlay; /* مزج اللون مع الصورة */
-  border-radius: 20px; /* زوايا مدورة */
-  margin: 20px; /* هامش خارجي */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* إضافة ظل */
+  background: linear-gradient(135deg, #f5f3f1, #d3cdca); /* Dégradé de marron */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  margin: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-  color: #2c3e50; /* لون النص */
+  color: #0a0a0a; /* Brun foncé */
   margin-bottom: 50px;
   font-size: 2.8rem;
   font-weight: 700;
   letter-spacing: -0.5px;
-  background-color: rgba(255, 255, 255, 0.9); /* خلفية شبه شفافة */
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 10px;
-  display: inline-block; /* لجعل الخلفية لا تمتد على العرض الكامل */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .responsibilities-list {
@@ -34,36 +32,36 @@ h1 {
 }
 
 .responsibility-card {
-  background-color: rgba(255, 255, 255, 0.95); /* خلفية شبه شفافة */
+  background: linear-gradient(135deg, #f5f2ee, #fcf9f5); /* Dégradé clair */
   border-radius: 20px;
   padding: 30px;
   width: 320px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* ظل أكثر وضوحًا */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1); /* حدود خفيفة */
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .responsibility-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* ظل أكبر عند التحويم */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .icon {
   font-size: 3rem;
-  color: #007bff;
+  color: #8B4513; /* Brun foncé */
   margin-bottom: 25px;
   transition: color 0.3s ease;
 }
 
 .responsibility-card:hover .icon {
-  color: #0056b3;
+  color: #A0522D; /* Brun moyen */
 }
 
 h3 {
   margin-bottom: 20px;
-  color: #2c3e50;
+  color: #8B4513; /* Brun foncé */
   font-size: 1.6rem;
   font-weight: 600;
 }
@@ -76,7 +74,7 @@ p {
 }
 
 .learn-more-button {
-  background-color: #007bff;
+  background-color: #A0522D; /* Brun moyen */
   color: white;
   border: none;
   padding: 12px 24px;
@@ -88,14 +86,14 @@ p {
 }
 
 .learn-more-button:hover {
-  background-color: #0056b3;
+  background-color: #8B4513; /* Brun foncé */
   transform: scale(1.05);
 }
 
 .details {
   margin-top: 25px;
   padding-top: 25px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1); /* حدود خفيفة */
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .details p {
@@ -156,13 +154,13 @@ p {
   background: none;
   border: none;
   cursor: pointer;
-  color: #007bff;
+  color: #A0522D; /* Brun moyen */
   font-size: 1.2rem;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .admin-actions button:hover {
-  color: #0056b3;
+  color: #8B4513; /* Brun foncé */
   transform: scale(1.1);
 }
 
@@ -170,19 +168,19 @@ p {
 .admin-form {
   margin-top: 50px;
   padding: 30px;
-  background-color: rgba(255, 255, 255, 0.95); /* خلفية شبه شفافة */
+  background: linear-gradient(135deg, #f1f1ef, #eeeae5); /* Dégradé clair */
   border-radius: 20px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* ظل أكثر وضوحًا */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid rgba(0, 0, 0, 0.1); /* حدود خفيفة */
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .admin-form h2 {
   margin-bottom: 25px;
   font-size: 1.8rem;
-  color: #2c3e50;
+  color: #8B4513; /* Brun foncé */
   font-weight: 600;
 }
 
@@ -190,21 +188,21 @@ p {
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.1); /* حدود خفيفة */
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.9); /* خلفية شبه شفافة */
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .admin-form input:focus {
-  border-color: #007bff;
+  border-color: #A0522D; /* Brun moyen */
   outline: none;
-  background-color: white; /* خلفية بيضاء عند التركيز */
+  background-color: white;
 }
 
 .admin-form button {
-  background-color: #007bff;
+  background-color: #A0522D; /* Brun moyen */
   color: white;
   border: none;
   padding: 12px 24px;
@@ -216,7 +214,7 @@ p {
 }
 
 .admin-form button:hover {
-  background-color: #0056b3;
+  background-color: #8B4513; /* Brun foncé */
   transform: scale(1.05);
 }
 
@@ -226,8 +224,7 @@ p {
 }
 
 .icon-picker button {
-  
-  border: 1px solid rgba(0, 0, 0, 0.1); /* حدود خفيفة */
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 12px;
   border-radius: 8px;
   cursor: pointer;
@@ -239,8 +236,7 @@ p {
 }
 
 .icon-picker button:hover {
- 
-  border-color: rgba(0, 0, 0, 0.2); /* حدود أغمق */
+  border-color: rgba(0, 0, 0, 0.2);
 }
 
 .icon-list {
@@ -257,10 +253,11 @@ p {
 }
 
 .icon-list span:hover {
-  color: #007bff;
+  color: #A0522D; /* Brun moyen */
   transform: scale(1.2);
 }
-/* إضافة أنماط للنافذة (Modal) */
+
+/* Styles pour la modal */
 .payment-modal-overlay {
   position: fixed;
   top: 0;
@@ -275,7 +272,7 @@ p {
 }
 
 .payment-modal {
-  background-color: white;
+  background: linear-gradient(135deg, #F5DEB3, #D2B48C); /* Dégradé clair */
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -287,7 +284,7 @@ p {
 .payment-modal h2 {
   margin-bottom: 20px;
   font-size: 1.8rem;
-  color: #2c3e50;
+  color: #8B4513; /* Brun foncé */
 }
 
 .payment-modal table {
@@ -308,7 +305,7 @@ p {
 }
 
 .payment-modal button {
-  background-color: #007bff;
+  background-color: #A0522D; /* Brun moyen */
   color: white;
   border: none;
   padding: 12px 24px;
@@ -319,5 +316,5 @@ p {
 }
 
 .payment-modal button:hover {
-  background-color: #0056b3;
+  background-color: #8B4513; /* Brun foncé */
 }

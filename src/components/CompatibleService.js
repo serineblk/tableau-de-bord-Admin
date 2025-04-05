@@ -1,16 +1,68 @@
 import React, { useState } from 'react';
-import { FaChartLine, FaFileInvoice, FaCoins, FaHandHoldingUsd, FaBalanceScale, FaUsers, FaReceipt, FaClock, FaMoneyCheckAlt, FaEdit, FaTrash, FaPlus } from 'react-icons/fa';
+import {
+  FaChartLine,
+  FaFileInvoice,
+  FaCoins,
+  FaHandHoldingUsd,
+  FaBalanceScale,
+  FaUsers,
+  FaReceipt,
+  FaClock,
+  FaMoneyCheckAlt,
+  FaEdit,
+  FaTrash,
+  FaPlus,
+} from 'react-icons/fa';
 import '../styles/CompatibleService.css';
+
+const icons = [
+  { component: <FaReceipt />, name: "FaReceipt" },
+  { component: <FaClock />, name: "FaClock" },
+  { component: <FaMoneyCheckAlt />, name: "FaMoneyCheckAlt" },
+  { component: <FaChartLine />, name: "FaChartLine" },
+  { component: <FaFileInvoice />, name: "FaFileInvoice" },
+  { component: <FaCoins />, name: "FaCoins" },
+  { component: <FaHandHoldingUsd />, name: "FaHandHoldingUsd" },
+  { component: <FaBalanceScale />, name: "FaBalanceScale" },
+  { component: <FaUsers />, name: "FaUsers" },
+];
+
+// Données factices
+const dummyPaymentData = [
+  { id: 1, type: "Financial", amount: 1000, paid: true },
+  { id: 2, type: "Paiements", amount: 500, paid: false },
+  { id: 3, type: "Payroll", amount: 2000, paid: true },
+  { id: 4, type: "Audit et Taxes", amount: 1500, paid: false },
+];
+
+const dummyCustomerPayments = [
+  { id: 1, customerName: "Client A", paymentDate: "2023-10-01", amount: 300, paymentType: "Carte bancaire" },
+  { id: 2, customerName: "Client B", paymentDate: "2023-10-05", amount: 150, paymentType: "Espèce" },
+  { id: 3, customerName: "Client C", paymentDate: "2023-10-10", amount: 500, paymentType: "Virement bancaire" },
+  { id: 4, customerName: "Client D", paymentDate: "2023-10-15", amount: 200, paymentType: "Portefeuille électronique" },
+];
+
+const dummyTaxes = [
+  { id: 1, taxType: "TVA", amount: 500, dueDate: "2023-11-01", status: "Payé" },
+  { id: 2, taxType: "Impôt sur les sociétés", amount: 1500, dueDate: "2023-12-15", status: "En attente" },
+  { id: 3, taxType: "Taxe de séjour", amount: 300, dueDate: "2023-10-20", status: "Payé" },
+  { id: 4, taxType: "Taxe foncière", amount: 1000, dueDate: "2024-01-10", status: "En attente" },
+];
+
+const dummyInvoices = [
+  { id: 1, invoiceNumber: "INV001", customerName: "Client A", amount: 1000, date: "2023-10-01", status: "Payé" },
+  { id: 2, invoiceNumber: "INV002", customerName: "Client B", amount: 500, date: "2023-10-05", status: "En attente" },
+  { id: 3, invoiceNumber: "INV003", customerName: "Client C", amount: 2000, date: "2023-10-10", status: "Payé" },
+  { id: 4, invoiceNumber: "INV004", customerName: "Client D", amount: 1500, date: "2023-10-15", status: "En attente" },
+];
 
 const CompatibleService = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [paymentDetails, setPaymentDetails] = useState([]);
-  const [showPaiements, setShowPaiements] = useState(false);
+  const [showPaiements, setShowPaiements] = useState(true);
   const [showTaxes, setShowTaxes] = useState(false);
-  const [showInvoicesModal, setShowInvoicesModal] = useState(false); // Nouvel état pour afficher les factures
-
-  // Utilisation de useState pour gérer la liste des responsabilités
+  const [showInvoicesModal, setShowInvoicesModal] = useState(false);
   const [responsibilities, setResponsibilities] = useState([
     {
       icon: <FaReceipt />,
@@ -25,64 +77,19 @@ const CompatibleService = () => {
       details: "Le suivi des paiements en attente implique l'identification des retards, la communication avec les clients, et la mise en place de rappels."
     },
   ]);
-
   const [isEditing, setIsEditing] = useState(null);
   const [newResponsibility, setNewResponsibility] = useState({ icon: '', title: '', description: '', details: '' });
   const [showIconPicker, setShowIconPicker] = useState(false);
   const [selectedIcon, setSelectedIcon] = useState(null);
 
-  const icons = [
-    { component: <FaReceipt />, name: "FaReceipt" },
-    { component: <FaClock />, name: "FaClock" },
-    { component: <FaMoneyCheckAlt />, name: "FaMoneyCheckAlt" },
-    { component: <FaChartLine />, name: "FaChartLine" },
-    { component: <FaFileInvoice />, name: "FaFileInvoice" },
-    { component: <FaCoins />, name: "FaCoins" },
-    { component: <FaHandHoldingUsd />, name: "FaHandHoldingUsd" },
-    { component: <FaBalanceScale />, name: "FaBalanceScale" },
-    { component: <FaUsers />, name: "FaUsers" }
-  ];
-
-  // Données factices pour les paiements
-  const dummyPaymentData = [
-    { id: 1, type: "Financial", amount: 1000, paid: true },
-    { id: 2, type: "Paiements", amount: 500, paid: false },
-    { id: 3, type: "Payroll", amount: 2000, paid: true },
-    { id: 4, type: "Audit et Taxes", amount: 1500, paid: false },
-  ];
-
-  // Données factices pour les paiements des clients
-  const dummyCustomerPayments = [
-    { id: 1, customerName: "Client A", paymentDate: "2023-10-01", amount: 300, paymentType: "Carte bancaire" },
-    { id: 2, customerName: "Client B", paymentDate: "2023-10-05", amount: 150, paymentType: "Espèce" },
-    { id: 3, customerName: "Client C", paymentDate: "2023-10-10", amount: 500, paymentType: "Virement bancaire" },
-    { id: 4, customerName: "Client D", paymentDate: "2023-10-15", amount: 200, paymentType: "Portefeuille électronique" },
-  ];
-
-  // Données factices pour les taxes
-  const dummyTaxes = [
-    { id: 1, taxType: "TVA", amount: 500, dueDate: "2023-11-01", status: "Payé" },
-    { id: 2, taxType: "Impôt sur les sociétés", amount: 1500, dueDate: "2023-12-15", status: "En attente" },
-    { id: 3, taxType: "Taxe de séjour", amount: 300, dueDate: "2023-10-20", status: "Payé" },
-    { id: 4, taxType: "Taxe foncière", amount: 1000, dueDate: "2024-01-10", status: "En attente" },
-  ];
-
-  // Données factices pour les factures
-  const dummyInvoices = [
-    { id: 1, invoiceNumber: "INV001", customerName: "Client A", amount: 1000, date: "2023-10-01", status: "Payé" },
-    { id: 2, invoiceNumber: "INV002", customerName: "Client B", amount: 500, date: "2023-10-05", status: "En attente" },
-    { id: 3, invoiceNumber: "INV003", customerName: "Client C", amount: 2000, date: "2023-10-10", status: "Payé" },
-    { id: 4, invoiceNumber: "INV004", customerName: "Client D", amount: 1500, date: "2023-10-15", status: "En attente" },
-  ];
-
+  // Gestion des événements
   const handleLearnMoreClick = (index) => {
     setSelectedCard(selectedCard === index ? null : index);
-
     if (responsibilities[index].title === "Suivi des paiements en attente") {
       setPaymentDetails(dummyPaymentData);
       setShowPaymentModal(true);
     } else if (responsibilities[index].title === "Génération de factures et reçus") {
-      setShowInvoicesModal(true); // Afficher la modal des factures
+      setShowInvoicesModal(true);
     }
   };
 
@@ -136,28 +143,36 @@ const CompatibleService = () => {
     setShowIconPicker(false);
   };
 
+  // Composant pour afficher une carte de responsabilité
+  const ResponsibilityCard = ({ responsibility, index }) => (
+    <div key={index} className="responsibility-card">
+      <div className="icon">{responsibility.icon}</div>
+      <h3>{responsibility.title}</h3>
+      <p>{responsibility.description}</p>
+      <button className="learn-more-button" onClick={() => handleLearnMoreClick(index)}>
+        {selectedCard === index ? "Moins" : "En savoir plus"}
+      </button>
+      {selectedCard === index && (
+        <div className="details">
+          <p>{responsibility.details}</p>
+        </div>
+      )}
+      <div className="admin-actions">
+        <button onClick={() => handleEditResponsibility(index)}><FaEdit /></button>
+        <button onClick={() => handleDeleteResponsibility(index)}><FaTrash /></button>
+      </div>
+    </div>
+  );
+
+  // Rendu du composant principal
   return (
     <div className="compatible-service-container">
-      <h1>Responsabilités du Directeur Général dans le Service Comptable</h1>
+      <h1>Gestion de service compatible</h1>
+
+      {/* Liste des responsabilités */}
       <div className="responsibilities-list">
         {responsibilities.map((responsibility, index) => (
-          <div key={index} className="responsibility-card">
-            <div className="icon">{responsibility.icon}</div>
-            <h3>{responsibility.title}</h3>
-            <p>{responsibility.description}</p>
-            <button className="learn-more-button" onClick={() => handleLearnMoreClick(index)}>
-              {selectedCard === index ? "Moins" : "En savoir plus"}
-            </button>
-            {selectedCard === index && (
-              <div className="details">
-                <p>{responsibility.details}</p>
-              </div>
-            )}
-            <div className="admin-actions">
-              <button onClick={() => handleEditResponsibility(index)}><FaEdit /></button>
-              <button onClick={() => handleDeleteResponsibility(index)}><FaTrash /></button>
-            </div>
-          </div>
+          <ResponsibilityCard key={index} responsibility={responsibility} index={index} />
         ))}
       </div>
 
@@ -166,53 +181,25 @@ const CompatibleService = () => {
         <div className="payment-modal-overlay">
           <div className="payment-modal">
             <h2>Suivi des paiements</h2>
-            <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+            <div className="tabs">
               <button onClick={() => { setShowPaiements(true); setShowTaxes(false); }}>Paiements</button>
               <button onClick={() => { setShowTaxes(true); setShowPaiements(false); }}>Taxes</button>
             </div>
             {showPaiements && (
-              <table>
-                <thead>
-                  <tr>
-                    <th>Nom du client</th>
-                    <th>Date de paiement</th>
-                    <th>Montant</th>
-                    <th>Type de paiement</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {dummyCustomerPayments.map((payment) => (
-                    <tr key={payment.id}>
-                      <td>{payment.customerName}</td>
-                      <td>{payment.paymentDate}</td>
-                      <td>{payment.amount} €</td>
-                      <td>{payment.paymentType}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <Table data={dummyCustomerPayments} columns={[
+                { key: "customerName", label: "Nom du client" },
+                { key: "paymentDate", label: "Date de paiement" },
+                { key: "amount", label: "Montant", format: (value) => `${value} €` },
+                { key: "paymentType", label: "Type de paiement" },
+              ]} />
             )}
             {showTaxes && (
-              <table>
-                <thead>
-                  <tr>
-                    <th>Type de taxe</th>
-                    <th>Montant</th>
-                    <th>Date d'échéance</th>
-                    <th>Statut</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {dummyTaxes.map((tax) => (
-                    <tr key={tax.id}>
-                      <td>{tax.taxType}</td>
-                      <td>{tax.amount} €</td>
-                      <td>{tax.dueDate}</td>
-                      <td>{tax.status}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <Table data={dummyTaxes} columns={[
+                { key: "taxType", label: "Type de taxe" },
+                { key: "amount", label: "Montant", format: (value) => `${value} €` },
+                { key: "dueDate", label: "Date d'échéance" },
+                { key: "status", label: "Statut" },
+              ]} />
             )}
             <button onClick={() => setShowPaymentModal(false)}>Fermer</button>
           </div>
@@ -224,33 +211,19 @@ const CompatibleService = () => {
         <div className="payment-modal-overlay">
           <div className="payment-modal">
             <h2>Factures</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Numéro de facture</th>
-                  <th>Nom du client</th>
-                  <th>Montant</th>
-                  <th>Date</th>
-                  <th>Statut</th>
-                </tr>
-              </thead>
-              <tbody>
-                {dummyInvoices.map((invoice) => (
-                  <tr key={invoice.id}>
-                    <td>{invoice.invoiceNumber}</td>
-                    <td>{invoice.customerName}</td>
-                    <td>{invoice.amount} €</td>
-                    <td>{invoice.date}</td>
-                    <td>{invoice.status}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <Table data={dummyInvoices} columns={[
+              { key: "invoiceNumber", label: "Numéro de facture" },
+              { key: "customerName", label: "Nom du client" },
+              { key: "amount", label: "Montant", format: (value) => `${value} €` },
+              { key: "date", label: "Date" },
+              { key: "status", label: "Statut" },
+            ]} />
             <button onClick={() => setShowInvoicesModal(false)}>Fermer</button>
           </div>
         </div>
       )}
 
+      {/* Formulaire d'administration */}
       <div className="admin-form">
         <h2>{isEditing !== null ? "Modifier une responsabilité" : "Ajouter une nouvelle responsabilité"}</h2>
         <input
@@ -295,5 +268,29 @@ const CompatibleService = () => {
     </div>
   );
 };
+
+// Composant Table générique pour les modales
+const Table = ({ data, columns }) => (
+  <table>
+    <thead>
+      <tr>
+        {columns.map((column, index) => (
+          <th key={index}>{column.label}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {data.map((row, rowIndex) => (
+        <tr key={rowIndex}>
+          {columns.map((column, colIndex) => (
+            <td key={colIndex}>
+              {column.format ? column.format(row[column.key]) : row[column.key]}
+            </td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+);
 
 export default CompatibleService;

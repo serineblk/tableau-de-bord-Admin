@@ -1,27 +1,27 @@
 /* UserManagement.css */
 :root {
-  --primary-color: #6c5ce7; /* Violet moderne */
-  --primary-hover-color: #5a4abf; /* Violet plus foncé */
-  --background-color: #f8f9fa; /* Fond clair */
-  --text-color: #2d3436; /* Texte sombre */
-  --border-color: #dfe6e9; /* Bordure claire */
-  --hover-background-color: #f1f3f5; /* Fond au survol */
+  --primary-color: #8b4513; /* Marron moyen */
+  --primary-hover-color: #5c4033; /* Marron foncé */
+  --background-color: #f9f3e4; /* Fond beige clair */
+  --text-color: #5c4033; /* Marron foncé pour le texte */
+  --border-color: #d2b48c; /* Marron doux pour les bordures */
+  --hover-background-color: #f5deb3; /* Crème légèrement dorée */
   --white-color: #ffffff; /* Blanc */
   --border-radius: 12px; /* Bordures arrondies */
   --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre légère */
   --transition-speed: 0.3s; /* Vitesse des transitions */
   --font-family: 'Poppins', sans-serif; /* Police moderne */
-  --gradient-primary: linear-gradient(135deg, #6c5ce7, #5a4abf); /* Dégradé violet */
-  --gradient-danger: linear-gradient(135deg, #ff7675, #d63031); /* Dégradé rouge */
+  --gradient-primary: linear-gradient(135deg, #a0522d, #8b4513); /* Dégradé marron chaud */
+  --gradient-danger: linear-gradient(135deg, #cd5c5c, #8b0000); /* Dégradé rouge terreux */
 }
 
 /* Mode sombre */
 .dark-mode {
-  --background-color: #2d3436;
-  --text-color: #f8f9fa;
-  --border-color: #636e72;
-  --hover-background-color: #434c50;
-  --white-color: #2d3436;
+  --background-color: #5c4033; /* Marron foncé */
+  --text-color: #f9f3e4; /* Beige clair */
+  --border-color: #636e72; /* Gris légèrement plus foncé */
+  --hover-background-color: #434c50; /* Marron très foncé */
+  --white-color: #2d3436; /* Noir profond */
 }
 
 /* Conteneur parent */
@@ -72,12 +72,12 @@
 }
 
 .notification.success {
-  background: #00b894;
+  background: #8b4513; /* Marron moyen */
   color: var(--white-color);
 }
 
 .notification.error {
-  background: #d63031;
+  background: #8b0000; /* Rouge foncé */
   color: var(--white-color);
 }
 
@@ -132,7 +132,7 @@
 .search-input:focus {
   border-color: var(--primary-color);
   outline: none;
-  box-shadow: 0 0 8px rgba(108, 92, 231, 0.3);
+  box-shadow: 0 0 8px rgba(139, 69, 19, 0.3);
 }
 
 .search-icon {
@@ -181,7 +181,7 @@
 .user-form input:focus {
   border-color: var(--primary-color);
   outline: none;
-  box-shadow: 0 0 8px rgba(108, 92, 231, 0.3);
+  box-shadow: 0 0 8px rgba(139, 69, 19, 0.3);
 }
 
 .user-form button {

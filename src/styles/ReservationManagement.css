@@ -1,93 +1,164 @@
-/* ReservationManagement.css */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
 .reservation-management {
-    font-family: 'Poppins', sans-serif;
-    padding: 30px;
-    max-width: 900px;
-    margin: 0 auto;
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.reservation-management h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.reservation-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 25px;
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-.reservation-input {
-    padding: 14px;
-    border: 2px solid #bbb;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #faf9f7;
+    
+    min-height: 100vh;
+  }
+  
+  .reservation-form {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
     border-radius: 8px;
-    font-size: 17px;
-    background-color: white;
-    color: #333;
-    transition: all 0.3s ease-in-out;
-}
-
-.reservation-input:focus {
-    border-color: #4facfe;
-    box-shadow: 0 0 6px rgba(79, 172, 254, 0.5);
-}
-
-.add-reservation-button {
-    padding: 14px;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 17px;
-    font-weight: 700;
-    transition: all 0.3s ease;
-}
-
-.add-reservation-button:hover {
-    background: linear-gradient(135deg, #ff4b2b, #ff416c);
-    transform: scale(1.07);
-}
-
-.reservation-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.reservation-item {
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .reservation-list {
+    margin-top: 20px;
+  }
+  
+  .reservation-item {
     display: flex;
     justify-content: space-between;
-    padding: 14px;
-    border: 2px solid #ddd;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
     border-radius: 8px;
-    margin-bottom: 12px;
-    background-color: rgba(255, 255, 255, 0.97);
-    color: #333;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.reservation-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.reservation-item span {
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reservation-details {
     flex: 1;
-    text-align: center;
-    font-weight: 600;
-}
+  }
+  
+  .reservation-details span {
+    margin-right: 20px;
+  }
+  
+  .reservation-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .edit-button, .delete-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .edit-button {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .delete-button {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .edit-button:hover {
+    background-color: #218838;
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333;
+  }
+  /* Ajout de styles pour l'heure */
+.reservation-details span {
+    margin-right: 20px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .reservation-details span:last-child {
+    margin-right: 0; /* Retirer la marge pour le dernier élément */
+  }
+  
+  /* Styles pour le champ de saisie de l'heure */
+  .form-input[type="time"] {
+    appearance: none; /* Supprimer le style par défaut sur certains navigateurs */
+    -webkit-appearance: none;
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .form-input[type="time"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  }
+  /* Conteneur pour le calendrier et l'heure */
+.date-time-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .date-picker {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .date-picker:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  }
+  
+  .time-picker {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .time-picker:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  }
+  
+  /* Styles pour la liste des réservations */
+  .reservation-details span {
+    margin-right: 20px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .reservation-details span:last-child {
+    margin-right: 0; /* Retirer la marge pour le dernier élément */
+  }
